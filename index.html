@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script src="script.js"></script>
+    <script src="setup.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+    <div ng-controller="BubbleController as bctrl">
+
+        <div class="bubble-wrapper">
+            <div class="speach" ng-class="message.from" ng-repeat="message in bctrl.messages">{{ message.messageText }}</div>
+        </div>
+        <div class="text-input-wrapper">
+            <input type="text" class="input-text" ng-model="bctrl.messageInput"/><div class="button" ng-click="bctrl.addMessage(bctrl.messageInput)">Enter</div>
+        </div>
+    </div>
+</body>
+</html>

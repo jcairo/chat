@@ -1,0 +1,144 @@
+html, body {
+    display: block;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: darkgrey;
+    font-family: seravek;
+    color: white;
+}
+
+
+.button {
+    line-height: 40px;
+    vertical-align: bottom;
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    background-color: #191b1e;
+}
+
+.bubble-wrapper {
+    border: 1px solid #bfbfbf;
+    width: 60%;
+    height: 300px;
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    background-color: #b7b7b7;
+}
+.input-text:focus {
+   outline-width: 0;
+}
+.input-text {
+    background-color: #e1e1e1;
+    line-height: 40px;
+    text-align: center;
+    padding: 0px;
+    border: 0px;
+    width: 40%;
+    margin: auto;
+    display: inline-block;
+    height: 40px;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+.text-input-wrapper {
+    text-align: center;
+    width: 40%;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.speach {
+    position: relative;
+    margin-top: 20px;
+    padding: 15px;
+    width: 50%;
+    text-align: center;
+    border-radius: 20px;
+    background: rgb(108, 108, 108);
+    box-shadow: inset 0px 1px 0px rgba(205, 205, 205, 1), 0px 3px 10px rgba(0, 0, 0, 0.31);
+}
+
+.speach.user {
+    margin-left: 40%;
+}
+
+.speach.correspondent {
+    margin-left: 8%;
+}
+
+.speach:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-color: rgb(108, 108, 108) transparent transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+    height: 0;
+    width: 0;
+    bottom: -18px;
+}
+
+.speach.correspondent:after {
+    left: 2em;
+}
+
+.speach.user:after {
+    right: 2em;
+}
+
+.bubble-wrapper::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.speach:hover {
+    animation: speach-expand 2s;
+    -webkit-animation: speach-expand .5s forwards;
+}
+
+@-webkit-keyframes speach-expand {
+    from {
+        width: 50%;
+    }
+    75% {
+        width: 53%;
+        transform: rotate(5deg);
+    }
+    to {
+        width: 51%;
+        transform: rotate(-3deg);
+    }
+}
+
+@keyframes speach-expand {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 105%;
+    }
+}
+
+.animate-enter {
+    -webkit-transition: 1s linear all;
+    transition: 1s linear all;
+    opacity: 0;
+}
+
+.animate-enter.animate-enter-active {
+    opacity: 1;
+}
