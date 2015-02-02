@@ -9,7 +9,6 @@ html, body {
     color: white;
 }
 
-
 .button {
     line-height: 40px;
     vertical-align: bottom;
@@ -29,9 +28,11 @@ html, body {
     margin-top: 10%;
     background-color: #b7b7b7;
 }
+
 .input-text:focus {
    outline-width: 0;
 }
+
 .input-text {
     background-color: #e1e1e1;
     line-height: 40px;

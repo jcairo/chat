@@ -8,15 +8,19 @@
     <link href="style.css" rel="stylesheet">
     <title></title>
 </head>
-<body>
-    <div ng-controller="BubbleController as bctrl">
+<body ng-controller="BubbleController as bctrl">
 
+    <div>
         <div class="bubble-wrapper">
-            <div class="speach" ng-class="message.from" ng-repeat="message in bctrl.messages">{{ message.messageText }}</div>
-        </div>
-        <div class="text-input-wrapper">
-            <input type="text" class="input-text" ng-model="bctrl.messageInput"/><div class="button" ng-click="bctrl.addMessage(bctrl.messageInput)">Enter</div>
+            <div class="speach" ng-class="message.from" ng-repeat="message in bctrl.messages">
+                {{ message.messageText }}
+            </div>
         </div>
     </div>
+
+    <div class="text-input-wrapper">
+        <input type="text" class="input-text" ng-model="bctrl.messageInput" ng-keypress="bctrl.keypress(bctrl.messageInput, $event)"/><div class="button" ng-click="bctrl.addMessage(bctrl.messageInput)">Enter</div>
+    </div>
+
 </body>
 </html>

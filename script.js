@@ -12,6 +12,17 @@ myApp.factory('MessageData', function () {
 var BubbleController = ['MessageData', function (MessageData) {
     this.messages = MessageData;
 
+    // accept enter key press to enter text
+    this.keypress = function (messageText, event) {
+        if (event.keyCode === 13) {
+            console.log(event);
+            console.log(messageText);
+            event.stopPropagation();
+            this.addMessage(messageText);
+        }
+    };
+
+    // add message and clear text box
     this.addMessage = function(messageText) {
         if (this.messageInput === '') return;
         this.messages.push({messageText: messageText, time: '8:05', from: 'user'});
